@@ -26,9 +26,9 @@ EXE_dependencies =  \
  sillytst.obj
 
 #       *Explicit Rules*
-sillav16.com: sillav16.cfg $(EXE_dependencies)
-  $(TLINK) /t/x/c/P-/L$(LIBPATH) @&&|
-LIB\c0t.obj+
+sillav16.exe: sillav16.cfg $(EXE_dependencies)
+  $(TLINK) /x/c/P-/L$(LIBPATH) @&&|
+LIB\c0s.obj+
 sillyav.obj+
 findf.obj+
 sillybas.obj+
@@ -54,7 +54,7 @@ sillytst.obj: sillav16.cfg src/main/c/sillytst.c
 #       *Compiler Configuration File*
 sillav16.cfg: sillav16.mak
   copy &&|
--mt
+-ms
 -2
 -f-
 -Og

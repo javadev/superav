@@ -1,6 +1,6 @@
 .AUTODEPEND
 
-#		*Translator Definitions*
+#       *Translator Definitions*
 CC = bcc +SILLAV16.CFG
 TASM = TASM
 TLIB = tlib
@@ -9,14 +9,14 @@ LIBPATH = D:\BC31\LIB
 INCLUDEPATH = D:\BC31\INCLUDE
 
 
-#		*Implicit Rules*
+#       *Implicit Rules*
 .c.obj:
   $(CC) -c {$< }
 
 .cpp.obj:
   $(CC) -c {$< }
 
-#		*List Macros*
+#       *List Macros*
 
 
 EXE_dependencies =  \
@@ -26,7 +26,7 @@ EXE_dependencies =  \
  sillylnk.obj \
  sillytst.obj
 
-#		*Explicit Rules*
+#       *Explicit Rules*
 sillav16.com: sillav16.cfg $(EXE_dependencies)
   $(TLINK) /t/x/c/P-/L$(LIBPATH) @&&|
 c0t.obj+
@@ -36,23 +36,23 @@ sillybas.obj+
 sillylnk.obj+
 sillytst.obj
 sillav16
-		# no map file
+        # no map file
 cs.lib
 |
 
 
-#		*Individual File Dependencies*
-sillyav.obj: sillav16.cfg sillyav.c 
+#       *Individual File Dependencies*
+sillyav.obj: sillav16.cfg src/main/c/sillyav.c 
 
-findf.obj: sillav16.cfg findf.c 
+findf.obj: sillav16.cfg src/main/c/findf.c 
 
-sillybas.obj: sillav16.cfg sillybas.c 
+sillybas.obj: sillav16.cfg src/main/c/sillybas.c 
 
-sillylnk.obj: sillav16.cfg sillylnk.c 
+sillylnk.obj: sillav16.cfg src/main/c/sillylnk.c 
 
-sillytst.obj: sillav16.cfg sillytst.c 
+sillytst.obj: sillav16.cfg src/main/c/sillytst.c 
 
-#		*Compiler Configuration File*
+#       *Compiler Configuration File*
 sillav16.cfg: sillav16.mak
   copy &&|
 -mt

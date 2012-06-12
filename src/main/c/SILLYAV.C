@@ -58,6 +58,53 @@ void Roprintf(char *fmt, ...)
     va_end(argptr);
 }
 
+/**
+Category: DOS kernel
+INT 21 - Windows95 - LONG FILENAME - CREATE OR OPEN FILE
+
+    AX = 716Ch
+    BX = access mode and sharing flags (see #01782,also AX=6C00h)
+    CX = attributes
+    DX = action (see #01781)
+    DS:SI -> ASCIZ filename
+    DI = alias hint (number to append to short filename for disambiguation)
+Return: CF clear if successful
+        AX = file handle
+        CX = action taken
+        0001h file opened
+        0002h file created
+        0003h file replaced
+    CF set on error
+        AX = error code (see #01680)
+        7100h if function not supported
+SeeAlso: AX=6C00h,AX=7141h,AX=7156h,AX=71A9h
+*/
+
+int openFile(void *filename, word mode)
+{
+#ifndef _WIN32
+    struct  REGPACK regpack;
+    byte    count_try;
+
+    count_try = 1;
+    regpack.r_flags |= 1;
+    while (count_try && (regpack.r_flags&1) )
+    {
+        count_try--;
+        regpack.r_ax = 0x716C;
+        regpack.r_bx = 0x0;
+        regpack.r_cx = 0x2F;
+        regpack.r_dx = 0x1;
+        regpack.r_si = FP_OFF(filename);
+        regpack.r_ds = FP_SEG(filename);
+        intr(0x21, &regpack);
+    }
+    return regpack.r_flags&1 ? -1 : regpack.r_ax;
+#else
+    return _open(filename, mode);
+#endif
+}
+
 int Read(void *buf, uint count)
 {
     return _read(BU->OpenedFile,buf,count);
@@ -799,7 +846,7 @@ word Scan_File(void)
                         #else
                             _dos_setfileattr(BU->Fname,0);
                         #endif
-                        if ( (BU->OpenedFile = _open(BU->Fname,O_RDWR|O_BINARY)) != -1 )
+                        if ( (BU->OpenedFile = openFile(BU->Fname,O_RDWR|O_BINARY)) != -1 )
                         {
                             Rprintf("%s",BU->Fname);
                             if (Cur_Record->cure != NULL)
@@ -863,7 +910,7 @@ word Check_File(char * Fname)
         Rprintf("Scan terminate...\n");
         return Result;
     }
-    if ( (BU->OpenedFile = _open(Fname,O_RDONLY|O_BINARY)) != -1 )
+    if ( (BU->OpenedFile = openFile(Fname,O_RDONLY|O_BINARY)) != -1 )
     {
         BU->EP = BU->Entry_Count = 0;
         BU->File_Length = filelength(BU->OpenedFile);

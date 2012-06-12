@@ -9,7 +9,7 @@
 SillyAV включает в себя следующие файлы:
 
 README.TXT    - файл c описанием
-SILLAV16.COM  - SillyAV сканер для DOS (командная строка)
+SILLAV16.EXE  - SillyAV сканер для DOS (командная строка)
 SILLAV32.EXE  - SillyAV сканер для WIN32 (командная строка)
 FINDF.C       - модуль: поиск файлов на диске
 SILLYBAS.C    - модуль: описание масок вирусов

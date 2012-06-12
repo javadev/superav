@@ -92,7 +92,7 @@ int openFile(void *filename, word mode)
     {
         count_try--;
         regpack.r_ax = 0x716C;
-        regpack.r_bx = mode;
+        regpack.r_bx = mode&O_RDWR ? 0x2 : 0x0;
         regpack.r_cx = 0x2F;
         regpack.r_dx = 0x1;
         regpack.r_si = FP_OFF(filename);

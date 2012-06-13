@@ -27,7 +27,7 @@ EXE_dependencies =  \
  sillytst.obj
 
 #       *Explicit Rules*
-sillav32.com: sillav32.cfg $(EXE_dependencies)
+sillav32.exe: sillav32.cfg $(EXE_dependencies)
   $(TLINK) /t/x/c/P-/L$(LIBPATH) @&&|
 c0x32.obj+
 sillyav.obj+

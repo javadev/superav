@@ -1319,7 +1319,7 @@ int main(int argc, char *argv[])
              "    /V  enable redundant scanning\n"
              "    /W[=filename]  save report\n"
              "    /Z  disable aborting\n"
-             "    /P  save pages.\n");
+             "    /P  save pages\n");
     }
     if (BU->Stat.Infected)
     {

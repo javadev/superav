@@ -1155,8 +1155,8 @@ int main(int argc, char *argv[])
     char *StartMes =
  "ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ\n"
  "ณ    Super Antivirus for DOS16/WIN32      บ\n"
- "ณ Copyright(C) Valentin Kolesnikov 1999   บ  Support: E-mail:\n"
- "ณ        Version 1.0  build 021           บ  javadev75@gmail.com\n"
+ "ณ Copyright(C) Valentin Kolesnikov 2012   บ  Support: E-mail:\n"
+ "ณ        Version 1.0  build 022           บ  javadev75@gmail.com\n"
  "ภอออออออออออออออออออออออออออออออออออออออออผ\n\n";
 
     memset(BU,0,sizeof(BUFFER));
@@ -1303,9 +1303,9 @@ int main(int argc, char *argv[])
     else
     {
         #ifdef _WIN32
-            printf("Usage: Sillav32 Fname|Path /Keys\n");
+            printf("Usage: Supera32 Fname|Path /Keys\n");
         #else
-            printf("Usage: Sillav16 Fname|Path /Keys\n");
+            printf("Usage: Supera16 Fname|Path /Keys\n");
         #endif
         printf(
              "    /*  scan all files\n"

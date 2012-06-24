@@ -1,4 +1,4 @@
-/* Silly ANTIVIRUS Version 1.0 build 021                        */
+/* Super ANTIVIRUS Version 1.0 build 021                        */
 /* Written by Valentin Kolesnikov, e-mail: javadev75@gmail.com  */
 
 #include <stdio.h>
@@ -12,7 +12,7 @@
 #include <fcntl.h>
 #include <sys\stat.h>
 #include <string.h>
-#include "sillyav.h"
+#include "superav.h"
 
 BUFFER LOCAL_DATA;//, *BU = &LOCAL_DATA;
 
@@ -1154,7 +1154,7 @@ int main(int argc, char *argv[])
     char *P_Key;
     char *StartMes =
  "ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿\n"
- "³    Silly Antivirus for DOS16/WIN32      º\n"
+ "³    Super Antivirus for DOS16/WIN32      º\n"
  "³ Copyright(C) Valentin Kolesnikov 1999   º  Support: E-mail:\n"
  "³        Version 1.0  build 021           º  javadev75@gmail.com\n"
  "ÀÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼\n\n";
@@ -1232,7 +1232,7 @@ int main(int argc, char *argv[])
                 }
                 if (strlen(BU->Repname) == 0)
                 {
-                    strcpy(BU->Repname,"sillyav.log");
+                    strcpy(BU->Repname,"superav.log");
                 }
                 if ( (BU->ReportHandle = fopen(BU->Repname, "w+t")) == NULL)
                 {

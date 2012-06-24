@@ -1,4 +1,4 @@
-/* Silly ANTIVIRUS Version 1.0 build 021                        */
+/* Super ANTIVIRUS Version 1.0 build 021                        */
 /* Written by Valentin Kolesnikov, e-mail: javadev75@gmail.com  */
 
 #include <stdio.h>
@@ -11,7 +11,7 @@
 #ifdef _WIN32
 #include <windows.h>
 #endif
-#include "sillyav.h"
+#include "superav.h"
 #define CCHMAXPATH 0x200
 
 extern word Check_File(char *fname);

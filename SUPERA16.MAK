@@ -1,7 +1,7 @@
 .AUTODEPEND
 
 #       *Translator Definitions*
-CC = bin\bcc.exe +SILLAV16.CFG
+CC = bin\bcc.exe +SUPERA16.CFG
 TASM = TASM
 TLIB = tlib
 TLINK = bin\tlink
@@ -19,40 +19,40 @@ INCLUDEPATH = INCLUDE;src\main\c
 #       *List Macros*
 
 EXE_dependencies =  \
- sillyav.obj \
+ superav.obj \
  findf.obj \
- sillybas.obj \
- sillylnk.obj \
- sillytst.obj
+ superbas.obj \
+ superlnk.obj \
+ supertst.obj
 
 #       *Explicit Rules*
-sillav16.exe: sillav16.cfg $(EXE_dependencies)
+SUPERA16.exe: SUPERA16.cfg $(EXE_dependencies)
   $(TLINK) /x/c/P-/L$(LIBPATH) @&&|
 LIB\c0s.obj+
-sillyav.obj+
+superav.obj+
 findf.obj+
-sillybas.obj+
-sillylnk.obj+
-sillytst.obj
-sillav16
+superbas.obj+
+superlnk.obj+
+supertst.obj
+SUPERA16
         # no map file
 cs.lib
 |
 
 #       *Individual File Dependencies*
-sillyav.obj: sillav16.cfg src/main/c/sillyav.c 
+superav.obj: SUPERA16.cfg src/main/c/superav.c 
 
-findf.obj: sillav16.cfg src/main/c/findf.c 
+findf.obj: SUPERA16.cfg src/main/c/findf.c 
 
-sillybas.obj: sillav16.cfg src/main/c/sillybas.c 
+superbas.obj: SUPERA16.cfg src/main/c/superbas.c 
 
-sillylnk.obj: sillav16.cfg src/main/c/sillylnk.c 
+superlnk.obj: SUPERA16.cfg src/main/c/superlnk.c 
 
-sillytst.obj: sillav16.cfg src/main/c/sillytst.c 
+supertst.obj: SUPERA16.cfg src/main/c/supertst.c 
 
 
 #       *Compiler Configuration File*
-sillav16.cfg: sillav16.mak
+SUPERA16.cfg: SUPERA16.mak
   copy &&|
 -ms
 -2
@@ -65,6 +65,6 @@ sillav16.cfg: sillav16.mak
 -wpre
 -I$(INCLUDEPATH)
 -L$(LIBPATH)
-| sillav16.cfg
+| SUPERA16.cfg
 
 

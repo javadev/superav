@@ -1,4 +1,4 @@
-bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/sillyav.c src/main/c/findf.c
-bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/sillybas.c src/main/c/sillylnk.c
-bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/sillytst.c
-bin\MAKE.EXE /f SILLAV16.MAK
+bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/superav.c src/main/c/findf.c
+bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/superbas.c src/main/c/superlnk.c
+bin\BCC.EXE -IINCLUDE;src\main\c -ms -2 -f- -d -vi- -wpro -weas -wpre -LLIB src/main/c/supertst.c
+bin\MAKE.EXE /f SUPERA16.MAK

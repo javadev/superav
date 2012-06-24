@@ -1,7 +1,7 @@
-/* Silly ANTIVIRUS Version 1.0 build 021                        */
+/* Super ANTIVIRUS Version 1.0 build 021                        */
 /* Written by Valentin Kolesnikov, e-mail: javadev75@gmail.com  */
 
-#include "sillyav.h"
+#include "superav.h"
 
 word decode_vpp681(void)
 {

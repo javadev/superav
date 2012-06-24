@@ -1,7 +1,7 @@
 .AUTODEPEND
 
 #       *Translator Definitions*
-CC = bcc32 +sillav32.CFG
+CC = bcc32 +supera32.CFG
 TASM = TASM
 TLIB = tlib
 TLINK = ilink32
@@ -20,22 +20,22 @@ INCLUDEPATH = C:\Users\valik\Documents\programs\BCC55\Include
 
 
 EXE_dependencies =  \
- sillyav.obj \
+ superav.obj \
  findf.obj \
- sillybas.obj \
- sillylnk.obj \
- sillytst.obj
+ superbas.obj \
+ superlnk.obj \
+ supertst.obj
 
 #       *Explicit Rules*
-sillav32.exe: sillav32.cfg $(EXE_dependencies)
+supera32.exe: supera32.cfg $(EXE_dependencies)
   $(TLINK) /t/x/c/P-/L$(LIBPATH) @&&|
 c0x32.obj+
-sillyav.obj+
+superav.obj+
 findf.obj+
-sillybas.obj+
-sillylnk.obj+
-sillytst.obj
-sillav32
+superbas.obj+
+superlnk.obj+
+supertst.obj
+supera32
         # no map file
 cw32.lib+
 import32.lib
@@ -43,18 +43,18 @@ import32.lib
 
 
 #       *Individual File Dependencies*
-sillyav.obj: sillav32.cfg src/main/c/sillyav.c 
+superav.obj: supera32.cfg src/main/c/superav.c 
 
-findf.obj: sillav32.cfg src/main/c/findf.c 
+findf.obj: supera32.cfg src/main/c/findf.c 
 
-sillybas.obj: sillav32.cfg src/main/c/sillybas.c 
+superbas.obj: supera32.cfg src/main/c/superbas.c 
 
-sillylnk.obj: sillav32.cfg src/main/c/sillylnk.c 
+superlnk.obj: supera32.cfg src/main/c/superlnk.c 
 
-sillytst.obj: sillav32.cfg src/main/c/sillytst.c 
+supertst.obj: supera32.cfg src/main/c/supertst.c 
 
 #       *Compiler Configuration File*
-sillav32.cfg: sillav32.mak
+supera32.cfg: supera32.mak
   copy &&|
 -f-
 -Og
@@ -66,6 +66,6 @@ sillav32.cfg: sillav32.mak
 -DWIN32
 -I$(INCLUDEPATH)
 -L$(LIBPATH)
-| sillav32.cfg
+| supera32.cfg
 
 

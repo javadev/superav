@@ -49,3 +49,5 @@ SUPERAV.H     - модуль: описание переменных и функ�
 
 О всех найденных ошибках и Ваших пожеланиях прошу сообщать по e-mail:
 javadev75@gmail.com
+
+[![Screen short](https://raw.github.com/javadev/superav/master/superav.png)](https://github.com/javadev/superav)

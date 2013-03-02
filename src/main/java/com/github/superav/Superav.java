@@ -1,7 +1,6 @@
 package com.github.superav;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.File;
 
 public class Superav extends AbstractSuperav {
     public static void main(String[] args) throws Exception {
@@ -22,7 +21,18 @@ public class Superav extends AbstractSuperav {
                 }
             }
         }
-        if (args.length < 2)  {
+        if (args.length >= 2)  {
+            for (String arg : args) {
+                if (!arg.startsWith("/") && !arg.startsWith("-")) {
+                    printf(String.format("\nProcessing %s\n", arg));
+                    new Findf().scanPath(new File(arg), new Findf.Visitor() {
+                        public void checkFile(File file) {
+                            Superav.checkFile(file);
+                        }
+                    });
+                }
+            }
+        } else {
             printf("\nUsage: java -jar superav.jar Fname|Path /Keys\n"
                  + "    /*  scan all files\n"
                  + "    /-  disinfect\n"
@@ -37,5 +47,10 @@ public class Superav extends AbstractSuperav {
                  + "    /Z  disable aborting\n"
                  + "    /P  save pages\n");
         }
+
+    }
+
+    public static void checkFile(File file) {
+        Log.info(file.getAbsolutePath() + "\tok.");
     }
 }

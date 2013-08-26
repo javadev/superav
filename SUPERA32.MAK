@@ -5,8 +5,8 @@ CC = bcc32 +supera32.CFG
 TASM = TASM
 TLIB = tlib
 TLINK = ilink32
-LIBPATH = C:\Users\valik\Documents\programs\BCC55\Lib
-INCLUDEPATH = C:\Users\valik\Documents\programs\BCC55\Include
+LIBPATH = C:\Borland\BCC55\Lib
+INCLUDEPATH = C:\Borland\BCC55\Include
 
 
 #       *Implicit Rules*

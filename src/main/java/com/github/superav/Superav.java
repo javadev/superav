@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Superav extends AbstractSuperav {
     public static void main(String[] args) throws Exception {
-        Superav superav = new Superav();
+        final Superav superav = new Superav();
         String startMes =
    "\n ----------------------------------------- \n"
  + "|  Super Antivirus for DOS16/WIN32/Java  ||\n"
@@ -27,7 +27,7 @@ public class Superav extends AbstractSuperav {
                     printf(String.format("\nProcessing %s\n", arg));
                     new Findf().scanPath(new File(arg), new Findf.Visitor() {
                         public void checkFile(File file) {
-                            Superav.checkFile(file);
+                            superav.checkFile(file);
                         }
                     });
                 }
@@ -50,7 +50,7 @@ public class Superav extends AbstractSuperav {
 
     }
 
-    public static void checkFile(File file) {
+    public void checkFile(File file) {
         Log.info(file.getAbsolutePath() + "\tok.");
     }
 }

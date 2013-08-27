@@ -235,6 +235,6 @@ extern void Xor_Byte(byte *Source, byte *Dest, byte Key, word Len);
 extern void Add_Byte(byte *Source, byte *Dest, byte Key, word Len);
 extern void Xor_Word(byte *Source, byte *Dest, word Key, word Len);
 extern void Add_Word(byte *Source, byte *Dest, word Key, word Len);
-extern word CutPast_File(dword DstOff, dword SrcOff, word Cut);
+extern word CutPast_File(dword DstOff, dword SrcOff, dword Cut);
 extern word Cure_COM_Imm(byte *Buf, word Len, long New_Size);
 extern word Cure_EXE_Imm(byte *Exe_ip, byte *Exe_cs, byte *Exe_ss, byte *Exe_sp, long New_Size);

@@ -217,7 +217,7 @@ void Add_Word(byte *Source, byte *Dest, word Key, word Len)
     }
 }
 
-word CutPast_File(dword DstOff, dword SrcOff, word Cut)
+word CutPast_File(dword DstOff, dword SrcOff, dword Cut)
 {
     int     rd;
 
@@ -409,7 +409,7 @@ void Fill_Data(void *dest, byte b, size_t n)
      memset(dest,b,n);
 }
 
-int Fill_Eof(dword file_length, byte *buffer, word size)
+int Fill_Eof(dword file_length, byte *buffer, dword size)
 {
     if (file_length == 0)
         return 0;

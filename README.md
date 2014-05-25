@@ -4,6 +4,9 @@
                    Июнь 2012 года. Valentin Kolesnikov
 *************************************************************************
 
+[![Build Status](https://secure.travis-ci.org/javadev/superav.png)](https://travis-ci.org/javadev/superav)
+[![Coverage Status](https://coveralls.io/repos/javadev/superav/badge.png?branch=master)](https://coveralls.io/r/javadev/superav)
+
 Комплект SuperAV для DOS и WIN32
 --------------------------------
 SuperAV включает в себя следующие файлы:

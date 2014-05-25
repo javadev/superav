@@ -2,7 +2,7 @@ package com.github.superav;
 
 import java.io.File;
 
-public class Superav extends AbstractSuperav {
+public class Superav extends Findf {
     public static void main(String[] args) throws Exception {
         final Superav superav = new Superav();
         String startMes =
@@ -19,13 +19,17 @@ public class Superav extends AbstractSuperav {
                     superav.flagAllFiles = true;
                     continue;
                 }
+                if (pKey.equalsIgnoreCase("r")) {
+                    superav.flagSubdir = false;
+                    continue;
+                }
             }
         }
         if (args.length >= 1)  {
             for (String arg : args) {
                 if (!arg.startsWith("/") && !arg.startsWith("--")) {
                     printf(String.format("\nProcessing %s\n", arg));
-                    new Findf().scanPath(new File(arg), new Findf.Visitor() {
+                    superav.scanPath(new File(arg), new Visitor() {
                         public void checkFile(File file) {
                             superav.checkFile(file);
                         }

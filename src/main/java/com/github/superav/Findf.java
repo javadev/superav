@@ -18,7 +18,7 @@ public class Findf extends AbstractSuperav {
             }
             if (!file.isDirectory()) {
                 visitor.checkFile(file);
-            } else {
+            } else if (flagSubdir) {
                 scanPath(file, visitor);
             }
         }

@@ -1155,8 +1155,8 @@ int main(int argc, char *argv[])
     char *StartMes =
  "ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ\n"
  "ณ    Super Antivirus for DOS16/WIN32      บ\n"
- "ณ Copyright(C) Valentin Kolesnikov 2012   บ  Support: E-mail:\n"
- "ณ        Version 1.0  build 022           บ  javadev75@gmail.com\n"
+ "ณ Copyright(C) Valentyn Kolesnikov 2015   บ  Support: E-mail:\n"
+ "ณ        Version 1.0  build 023           บ  javadev75@gmail.com\n"
  "ภอออออออออออออออออออออออออออออออออออออออออผ\n\n";
 
     memset(BU,0,sizeof(BUFFER));

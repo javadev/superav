@@ -19,7 +19,7 @@ package com.github.superav;
 
 import java.util.logging.*;
 
-public class Log  {
+public final class Log  {
     private enum MessageType { DEBUG, INFO, WARN, ERROR };
 
     private static class LogFormatter extends Formatter {
@@ -33,14 +33,6 @@ public class Log  {
             builder.append(formatMessage(record));
             builder.append("\n");
             return builder.toString();
-        }
-     
-        public String getHead(Handler handler) {
-            return super.getHead(handler);
-        }
-     
-        public String getTail(Handler handler) {
-            return super.getTail(handler);
         }
     }
     public static void debug(String param) {
@@ -77,19 +69,18 @@ public class Log  {
             handler.setFormatter(new LogFormatter());
             logger.addHandler(handler);
         }
-        String param = modifyString(localParam);
         switch (messageType) {
         case DEBUG:
-            logger.logp(Level.CONFIG, aClassName, "", param);
+            logger.logp(Level.CONFIG, aClassName, "", localParam);
             break;
         case INFO:
-            logger.logp(Level.INFO, aClassName, "", param);
+            logger.logp(Level.INFO, aClassName, "", localParam);
             break;
         case WARN:
-            logger.logp(Level.WARNING, aClassName, "", param);
+            logger.logp(Level.WARNING, aClassName, "", localParam);
             break;
         default:
-            logger.logp(Level.SEVERE, aClassName, "",  param);
+            logger.logp(Level.SEVERE, aClassName, "",  localParam);
             break;
         }
     }
@@ -118,13 +109,6 @@ public class Log  {
         }
         return sb.toString();
     }
-
-    private static String modifyString(String param) {
-         if (null == param && "".equals(param)) {
-             return "";
-         }
-         return param;
-     }
 
     private static void makeGoodTrace(StringBuilder sb, StackTraceElement[] trace) {
         for (StackTraceElement entry : trace) {

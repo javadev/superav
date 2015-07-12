@@ -20,12 +20,31 @@ package com.github.superav;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SuperavTest {
+public class LogTest {
 
     @Test
-    public void main() throws Exception {
-        Superav.main(new String[] {});
-        Superav.main(new String[] {".", "--r", "/*", "/?"});
-        Superav.main(new String[] {"./src/main/java/com/github", "--*"});
+    public void debug() throws Exception {
+        Log.debug("");
+    }
+
+    @Test
+    public void info() throws Exception {
+        Log.info("");
+    }
+
+    @Test
+    public void warn() throws Exception {
+        Log.warn("");
+        Log.warn(new Exception(""), "");
+    }
+
+    @Test
+    public void error() throws Exception {
+        Log.error("");
+        Log.error(new Exception(""), "");
+        Log.error(new Exception("", new Exception("")), "");
+        Log.error(new Exception(""), null);
+        Log.error(null);
+        Log.error(new Exception((String) null), null);
     }
 }

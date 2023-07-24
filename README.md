@@ -51,7 +51,6 @@ SuperAV включает в себя следующие файлы:
  -  4 - обнаружен вирус;
  -  5 - все обнауженные виусы удалены;
 
-О всех найденных ошибках и Ваших пожеланиях прошу сообщать по e-mail:
-javadev75@gmail.com
+О всех найденных ошибках пишите тут.
 
-[![Screen short](https://raw.github.com/javadev/superav/master/superav.png)](https://github.com/javadev/superav)
+[![Screen short](superav.png)](https://github.com/javadev/superav)
